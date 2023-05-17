@@ -3,18 +3,17 @@ import { Download } from '../api/download';
 import "../App.css"
 import io from "socket.io-client"
 
-const socket = io('http://localhost:1234');
+const socket = io('http://localhost:1234/');
 
 
 function App() {
   const [progress, setProgress] = useState(0);
-  let color = "#fffff"
   socket.on("progress", (data) => {
     setProgress(data.percentage)
   })
   return (
     
-    <div className={`h-screen w-screen bg-[${color}]`}>
+    <div className={`h-screen w-screen bg-[#010101]`}>
       <div className=" h-1/3 flex justify-center items-center">
         <h1 className="text-8xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-violet-600 to-violet-900 ">YOUZAY</h1>
       </div>
@@ -26,6 +25,7 @@ function App() {
       </div>
       </form>
       <h1 className="text-white text-center text-6xl">{progress}%</h1>
+      <h2 className='text-white text-center text-6xl' id='error-message'>hgfd</h2>
     </div>
   );
 }

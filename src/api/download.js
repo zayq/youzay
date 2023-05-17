@@ -9,16 +9,23 @@ export async function Download() {
       },
       body: JSON.stringify({ url: url })
     };
-    
     fetch('http://localhost:1234/download', options)
-
-    .then(response => response.blob())
+    .then(response => {
+      if (response.status == 500) {
+        document.getElementById("error-message").innerText = "INVALID URL"
+        return
+      }
+      return response.blob();
+    })
     .then(blob => {
       const url = URL.createObjectURL(blob);
       const link = document.createElement('a');
       link.href = url;
       link.download = 'youzay.mp4';
       link.click();
+      document.getElementById("error-message").innerText = ""
     })
-    .catch(error => console.error(error));
+    .catch(error => {
+      console.log("Something went wrong")
+    });
   }
