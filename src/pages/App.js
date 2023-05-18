@@ -3,7 +3,7 @@ import { Download } from '../api/download';
 import "../App.css"
 import io from "socket.io-client"
 
-const socket = io('http://localhost:1234/');
+const socket = io('http://test.zaylab.com/');
 
 
 function App() {
@@ -25,7 +25,7 @@ function App() {
       </div>
       </form>
       <h1 className="text-white text-center text-6xl">{progress}%</h1>
-      <h2 className='text-white text-center text-6xl' id='error-message'>hgfd</h2>
+      <h2 className='text-white text-center text-6xl' id='error-message'></h2>
     </div>
   );
 }
