@@ -3,7 +3,7 @@ import { Download } from '../api/download';
 import "../App.css"
 import io from "socket.io-client"
 
-const socket = io('http://test.zaylab.com/');
+const socket = io('http://3.95.191.67/');
 
 
 function App() {
