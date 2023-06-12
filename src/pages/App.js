@@ -3,7 +3,7 @@ import { Download } from '../api/download';
 import "../App.css"
 import io from "socket.io-client"
 
-const socket = io('http://localhost:1234/');
+const socket = io('https://serveryouzay.zaylab.com/');
 
 
 function App() {
