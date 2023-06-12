@@ -9,7 +9,7 @@ export async function Download() {
       },
       body: JSON.stringify({ url: url })
     };
-    fetch('https://serveryouzay.zaylab.com/download', options)
+    fetch('http://localhost:1234/download', options)
     .then(response => {
       if (response.status == 500) {
         document.getElementById("error-message").innerText = "INVALID URL"
